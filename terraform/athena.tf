@@ -1,24 +1,24 @@
-resource "aws_s3_bucket" "hoge" {
-  bucket = "tf-test"
-}
+//resource "aws_s3_bucket" "hoge" {
+//  bucket = ""
+//}
 
-resource "aws_kms_key" "test" {
-  deletion_window_in_days = 7
-  description             = "Athena KMS Key"
-}
+//resource "aws_kms_key" "test" {
+//  deletion_window_in_days = 7
+//  description             = "Athena KMS Key"
+//}
 
-resource "aws_athena_workgroup" "test" {
-  name = "example"
-
-  configuration {
-    result_configuration {
-      encryption_configuration {
-        encryption_option = "SSE_KMS"
-        kms_key_arn       = aws_kms_key.test.arn
-      }
-    }
-  }
-}
+//resource "aws_athena_workgroup" "test" {
+//  name = "example"
+//
+//  configuration {
+//    result_configuration {
+//      encryption_configuration {
+//        encryption_option = "SSE_KMS"
+//        kms_key_arn       = aws_kms_key.test.arn
+//      }
+//    }
+//  }
+//}
 
 resource "aws_athena_database" "hoge" {
   name   = "users"
