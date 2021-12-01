@@ -1,14 +1,14 @@
 # start glue resources here
-//resource "aws_glue_crawler" "example" {
-//  database_name = aws_glue_catalog_database.example.name
-//  name          = "example"
-//  role          = aws_iam_role.example.arn
-//
-//  s3_target {
-//    path = "s3://${aws_s3_bucket.example.bucket}"
-//  }
-//}
-//
+resource "aws_glue_crawler" "glue-crawler" {
+  database_name = "default"
+  name          = "loan_reject_crawler_1"
+  role          = "service-role/AWSGlueServiceRole-glue-iam"
+
+  s3_target {
+    path = "s3://test-bucket-61298376987/data/"
+  }
+}
+
 //
 //resource "aws_glue_job" "example" {
 //  name     = "example"
@@ -19,7 +19,3 @@
 //  }
 //}
 
-## schema registry
-
-
-### schema
